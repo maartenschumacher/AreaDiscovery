@@ -16,7 +16,7 @@ export const Map = () => (
     initialRegion={LONDON_REGION}>
     {landmarks.map(landmark => (
       <Marker key={landmark.id} coordinate={landmark.latlng}>
-        <Icon name="map-marker" size={44} color="grey" />
+        <Icon name="map-marker" size={44} color="grey" testID="marker" />
       </Marker>
     ))}
   </MapView>
