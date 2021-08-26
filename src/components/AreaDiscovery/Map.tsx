@@ -1,4 +1,5 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import landmarks from './londonLandmarks.json';
@@ -10,13 +11,28 @@ const LONDON_REGION = {
   longitudeDelta: 0.11384664007641732,
 };
 
-export const Map = () => (
+type Props = {
+  selectedLandmarkID: number | null;
+  setSelectedLandmarkID: (id: number) => void;
+};
+
+export const Map: React.FC<Props> = ({
+  selectedLandmarkID,
+  setSelectedLandmarkID,
+}) => (
   <MapView
     style={{width: '100%', height: '100%'}}
     initialRegion={LONDON_REGION}>
     {landmarks.map(landmark => (
       <Marker key={landmark.id} coordinate={landmark.latlng}>
-        <Icon name="map-marker" size={44} color="grey" testID="marker" />
+        <TouchableOpacity onPress={() => setSelectedLandmarkID(landmark.id)}>
+          <Icon
+            name="map-marker"
+            size={44}
+            color={selectedLandmarkID === landmark.id ? 'blue' : 'grey'}
+            testID="marker"
+          />
+        </TouchableOpacity>
       </Marker>
     ))}
   </MapView>
