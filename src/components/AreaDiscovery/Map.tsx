@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import landmarks from './londonLandmarks.json';
+import {Landmark} from 'types/Landmark';
 
 const LONDON_REGION = {
   latitude: 51.48383025891238,
@@ -12,11 +12,13 @@ const LONDON_REGION = {
 };
 
 type Props = {
+  landmarks: Landmark[];
   selectedLandmarkID: number | null;
   setSelectedLandmarkID: (id: number) => void;
 };
 
 export const Map: React.FC<Props> = ({
+  landmarks,
   selectedLandmarkID,
   setSelectedLandmarkID,
 }) => (
