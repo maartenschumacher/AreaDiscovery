@@ -21,4 +21,14 @@ describe('AreaDiscovery', () => {
 
     expect(queryAllByTestId('marker-heart').length).toBe(1);
   });
+
+  it('navigates to a detail view', () => {
+    const {getAllByTestId, getByText} = render(<Root />);
+    fireEvent.press(getAllByTestId('card')?.[0]);
+    expect(
+      getByText(
+        'Big Ben is the nickname for the Great Bell of the striking clock at the north end of the Palace of Westminster; the name is frequently extended to also refer to the clock and the clock tower. The official name of the tower in which Big Ben is located was originally the Clock Tower; it was renamed Elizabeth Tower in 2012 to mark the Diamond Jubilee of Elizabeth II, Queen of the United Kingdom.',
+      ),
+    ).toBeTruthy();
+  });
 });

@@ -43,6 +43,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -52,7 +55,7 @@
       "node"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native/*|react-native-vector-icons|react-native-maps)/)"
+      "node_modules/(?!(react-native|@react-native/*|react-native-vector-icons|react-native-maps|@react-navigation/*)/)"
     ]
   }
 }
