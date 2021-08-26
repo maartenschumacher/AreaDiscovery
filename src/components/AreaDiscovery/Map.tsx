@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Landmark} from 'types/Landmark';
+import {Landmark} from '../../types/Landmark';
 
 const LONDON_REGION = {
   latitude: 51.48383025891238,

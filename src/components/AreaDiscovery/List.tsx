@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
-import {Landmark} from 'types/Landmark';
+import {Landmark} from '../../types/Landmark';
 import {LandmarkCard} from './LandmarkCard';
 
 type Props = {

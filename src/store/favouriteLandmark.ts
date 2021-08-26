@@ -1,4 +1,4 @@
-import {FavouriteLandmarkState, Action, RootState} from 'types/store';
+import {FavouriteLandmarkState, Action, RootState} from '../types/store';
 
 export const favouriteLandmarksReducer = (
   state: FavouriteLandmarkState = {},
