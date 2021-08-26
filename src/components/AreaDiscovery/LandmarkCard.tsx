@@ -8,7 +8,7 @@ type Props = {
 
 export const LandmarkCard: React.FC<Props> = ({landmark}) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="card">
       <Image source={{uri: landmark.image}} style={styles.image} />
       <Text style={styles.title}>{landmark.name}</Text>
     </View>

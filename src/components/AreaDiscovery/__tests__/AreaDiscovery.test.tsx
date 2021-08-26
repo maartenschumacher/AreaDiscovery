@@ -7,4 +7,9 @@ describe('AreaDiscovery', () => {
     const {queryAllByTestId} = render(<AreaDiscovery />);
     expect(queryAllByTestId('marker').length).toBe(5);
   });
+
+  it('shows all cards', () => {
+    const {queryAllByTestId} = render(<AreaDiscovery />);
+    expect(queryAllByTestId('card').length).toBe(5);
+  });
 });
