@@ -28,7 +28,7 @@ export const MapMarker: React.FC<Props> = ({landmark, isSelected, onPress}) => {
           testID="marker"
         />
         {isFavourite ? (
-          <View style={styles.heart}>
+          <View style={styles.heart} testID="marker-heart">
             <Icon name="heart" size={15} color="red" />
           </View>
         ) : null}

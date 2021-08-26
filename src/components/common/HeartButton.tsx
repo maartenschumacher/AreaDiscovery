@@ -32,6 +32,7 @@ export const HeartButton: React.FC<Props> = ({landmarkID, size}) => {
         {width: size, height: size, borderRadius: size / 2},
       ]}>
       <TouchableOpacity
+        testID="heart-button"
         onPress={onPress}
         hitSlop={{top: 10, left: 10, right: 10, bottom: 10}}>
         <Icon
