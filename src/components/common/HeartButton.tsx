@@ -37,7 +37,7 @@ export const HeartButton: React.FC<Props> = ({landmarkID, size}) => {
         hitSlop={{top: 10, left: 10, right: 10, bottom: 10}}>
         <Icon
           name={isFavourited ? 'heart' : 'heart-o'}
-          size={size - 15}
+          size={size / 2}
           color="red"
         />
       </TouchableOpacity>

@@ -2,6 +2,7 @@ import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {RootStackParamList} from '../../types/navigation';
+import {HeartButton} from '../common/HeartButton';
 import {BackButton, SIZE as BACK_BUTTON_SIZE} from './BackButton';
 
 type Props = StackScreenProps<RootStackParamList, 'LandmarkDetail'>;
@@ -12,6 +13,9 @@ export const LandmarkDetail: React.FC<Props> = ({route}) => {
   return (
     <View style={styles.container}>
       <Image source={{uri: landmark.image}} style={styles.image} />
+      <View style={styles.heartButtonContainer}>
+        <HeartButton landmarkID={landmark.id} size={44} />
+      </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{landmark.name}</Text>
         <Text style={styles.description}>{landmark.description}</Text>
@@ -46,7 +50,12 @@ const styles = StyleSheet.create({
   },
   backButtonContainer: {
     position: 'absolute',
-    right: 20,
+    right: 30,
     top: IMAGE_HEIGHT - BACK_BUTTON_SIZE / 2,
+  },
+  heartButtonContainer: {
+    position: 'absolute',
+    right: 20,
+    top: 50,
   },
 });
