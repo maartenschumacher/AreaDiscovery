@@ -1,3 +1,4 @@
+import {HeartButton} from '../common/HeartButton';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Landmark} from '../../types/Landmark';
@@ -11,6 +12,9 @@ export const LandmarkCard: React.FC<Props> = ({landmark}) => {
     <View style={styles.container} testID="card">
       <Image source={{uri: landmark.image}} style={styles.image} />
       <Text style={styles.title}>{landmark.name}</Text>
+      <View style={styles.heartContainer}>
+        <HeartButton size={30} landmarkID={landmark.id} />
+      </View>
     </View>
   );
 };
@@ -35,5 +39,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     margin: 10,
+  },
+  heartContainer: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
   },
 });
