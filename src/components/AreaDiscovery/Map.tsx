@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {StyleSheet} from 'react-native';
+import MapView from 'react-native-maps';
 import {Landmark} from '../../types/Landmark';
+import {MapMarker} from './MapMarker';
 
 const LONDON_REGION = {
   latitude: 51.48383025891238,
@@ -24,16 +24,12 @@ export const Map: React.FC<Props> = ({
 }) => (
   <MapView style={styles.container} initialRegion={LONDON_REGION}>
     {landmarks.map(landmark => (
-      <Marker key={landmark.id} coordinate={landmark.latlng}>
-        <TouchableOpacity onPress={() => setSelectedLandmarkID(landmark.id)}>
-          <Icon
-            name="map-marker"
-            size={44}
-            color={selectedLandmarkID === landmark.id ? 'blue' : 'grey'}
-            testID="marker"
-          />
-        </TouchableOpacity>
-      </Marker>
+      <MapMarker
+        key={landmark.id}
+        landmark={landmark}
+        onPress={() => setSelectedLandmarkID(landmark.id)}
+        isSelected={selectedLandmarkID === landmark.id}
+      />
     ))}
   </MapView>
 );
