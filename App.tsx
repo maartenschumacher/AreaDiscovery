@@ -1,3 +1,3 @@
-import {AreaDiscovery} from './src/components/AreaDiscovery';
+import {Root} from './src/Root';
 
-export default AreaDiscovery;
+export default Root;
