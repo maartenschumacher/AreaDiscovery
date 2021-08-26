@@ -1,21 +1,30 @@
 import {HeartButton} from '../common/HeartButton';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Landmark} from '../../types/Landmark';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../types/navigation';
 
 type Props = {
   landmark: Landmark;
 };
 
 export const LandmarkCard: React.FC<Props> = ({landmark}) => {
+  const {navigate} =
+    useNavigation<StackNavigationProp<RootStackParamList, 'AreaDiscovery'>>();
+
   return (
-    <View style={styles.container} testID="card">
+    <TouchableOpacity
+      style={styles.container}
+      testID="card"
+      onPress={() => navigate('LandmarkDetail', {landmark})}>
       <Image source={{uri: landmark.image}} style={styles.image} />
       <Text style={styles.title}>{landmark.name}</Text>
       <View style={styles.heartContainer}>
         <HeartButton size={30} landmarkID={landmark.id} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
