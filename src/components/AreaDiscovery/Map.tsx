@@ -4,10 +4,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import landmarks from './londonLandmarks.json';
 
 const LONDON_REGION = {
-  latitude: 51.475772098209575,
-  latitudeDelta: 0.3580543927585893,
-  longitude: -0.0887239031507363,
-  longitudeDelta: 0.2938382496812153,
+  latitude: 51.48383025891238,
+  latitudeDelta: 0.13870234913213864,
+  longitude: -0.10401417580052907,
+  longitudeDelta: 0.11384664007641732,
 };
 
 export const Map = () => (
