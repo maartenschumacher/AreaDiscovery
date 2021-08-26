@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Landmark} from 'types/Landmark';
@@ -22,9 +22,7 @@ export const Map: React.FC<Props> = ({
   selectedLandmarkID,
   setSelectedLandmarkID,
 }) => (
-  <MapView
-    style={{width: '100%', height: '100%'}}
-    initialRegion={LONDON_REGION}>
+  <MapView style={styles.container} initialRegion={LONDON_REGION}>
     {landmarks.map(landmark => (
       <Marker key={landmark.id} coordinate={landmark.latlng}>
         <TouchableOpacity onPress={() => setSelectedLandmarkID(landmark.id)}>
@@ -39,3 +37,9 @@ export const Map: React.FC<Props> = ({
     ))}
   </MapView>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
