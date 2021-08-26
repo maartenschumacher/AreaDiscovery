@@ -5,12 +5,25 @@ import {LandmarkCard} from './LandmarkCard';
 
 type Props = {
   landmarks: Landmark[];
+  selectedLandmarkID: number | null;
 };
 
-export const List: React.FC<Props> = ({landmarks}) => {
+export const List: React.FC<Props> = ({landmarks, selectedLandmarkID}) => {
+  const flatListRef = React.useRef<FlatList>(null);
+
+  React.useEffect(() => {
+    const index = landmarks.findIndex(
+      landmark => landmark.id === selectedLandmarkID,
+    );
+    if (flatListRef.current && index >= 0) {
+      flatListRef.current.scrollToIndex({index});
+    }
+  }, [selectedLandmarkID, flatListRef, landmarks]);
+
   return (
     <View style={styles.container}>
       <FlatList
+        ref={flatListRef}
         horizontal
         data={landmarks}
         keyExtractor={item => `${item.id}`}

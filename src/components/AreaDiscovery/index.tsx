@@ -15,7 +15,7 @@ export const AreaDiscovery = () => {
         selectedLandmarkID={selectedLandmarkID}
         setSelectedLandmarkID={setSelectedLandmarkID}
       />
-      <List landmarks={landmarks} />
+      <List landmarks={landmarks} selectedLandmarkID={selectedLandmarkID} />
     </View>
   );
 };
