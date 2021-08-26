@@ -1,5 +1,6 @@
 import React from 'react';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
+import landmarks from './londonLandmarks.json';
 
 const LONDON_REGION = {
   latitude: 51.475772098209575,
@@ -11,6 +12,9 @@ const LONDON_REGION = {
 export const Map = () => (
   <MapView
     style={{width: '100%', height: '100%'}}
-    initialRegion={LONDON_REGION}
-  />
+    initialRegion={LONDON_REGION}>
+    {landmarks.map(landmark => (
+      <Marker key={landmark.id} coordinate={landmark.latlng} />
+    ))}
+  </MapView>
 );
