@@ -1,6 +1,7 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react-native';
 import {Root} from '../../../Root';
+import {ScrollView} from 'react-native';
 
 describe('AreaDiscovery', () => {
   it('shows all markers', () => {
@@ -20,6 +21,19 @@ describe('AreaDiscovery', () => {
     fireEvent.press(getAllByTestId('AreaDiscovery_heart-button')?.[0]);
 
     expect(queryAllByTestId('marker-heart').length).toBe(1);
+  });
+
+  it('scrolls the list when selecting a marker', () => {
+    const scrollToSpy = jest.spyOn(ScrollView.prototype, 'scrollTo');
+    const {getAllByTestId} = render(<Root />);
+    fireEvent.press(getAllByTestId('marker')?.[0]);
+    /*
+      Would be nicer to test an item in the list that's not the first,
+      but unfortunately the VirtualizedList mock is not behaving properly
+      since it doesn't update highestMeasuredFrameIndex
+    */
+    expect(scrollToSpy).toHaveBeenCalledWith({animated: undefined, x: 0});
+    scrollToSpy.mockClear();
   });
 
   it('navigates to a detail view', () => {
