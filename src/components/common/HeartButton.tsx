@@ -11,9 +11,10 @@ import {RootState} from '../../types/store';
 type Props = {
   landmarkID: number;
   size: number;
+  testID: string;
 };
 
-export const HeartButton: React.FC<Props> = ({landmarkID, size}) => {
+export const HeartButton: React.FC<Props> = ({landmarkID, size, testID}) => {
   const dispatch = useDispatch();
 
   const isFavourited = useSelector<RootState>(state =>
@@ -32,7 +33,7 @@ export const HeartButton: React.FC<Props> = ({landmarkID, size}) => {
         {width: size, height: size, borderRadius: size / 2},
       ]}>
       <TouchableOpacity
-        testID="heart-button"
+        testID={testID}
         onPress={onPress}
         hitSlop={{top: 10, left: 10, right: 10, bottom: 10}}>
         <Icon

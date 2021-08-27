@@ -10,7 +10,7 @@ export const BackButton = () => {
     useNavigation<StackNavigationProp<RootStackParamList, 'LandmarkDetail'>>();
 
   return (
-    <TouchableOpacity onPress={() => goBack()}>
+    <TouchableOpacity onPress={() => goBack()} testID="back-button">
       <View style={styles.container}>
         <Icon name="chevron-down" size={SIZE - 15} color="blue" />
       </View>

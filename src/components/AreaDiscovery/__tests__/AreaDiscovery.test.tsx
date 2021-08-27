@@ -17,7 +17,7 @@ describe('AreaDiscovery', () => {
     const {queryAllByTestId, getAllByTestId} = render(<Root />);
     expect(queryAllByTestId('marker-heart').length).toBe(0);
 
-    fireEvent.press(getAllByTestId('heart-button')?.[0]);
+    fireEvent.press(getAllByTestId('AreaDiscovery_heart-button')?.[0]);
 
     expect(queryAllByTestId('marker-heart').length).toBe(1);
   });

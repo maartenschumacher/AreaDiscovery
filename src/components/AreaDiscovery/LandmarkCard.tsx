@@ -22,7 +22,11 @@ export const LandmarkCard: React.FC<Props> = ({landmark}) => {
       <Image source={{uri: landmark.image}} style={styles.image} />
       <Text style={styles.title}>{landmark.name}</Text>
       <View style={styles.heartContainer}>
-        <HeartButton size={30} landmarkID={landmark.id} />
+        <HeartButton
+          size={30}
+          landmarkID={landmark.id}
+          testID="AreaDiscovery_heart-button"
+        />
       </View>
     </TouchableOpacity>
   );

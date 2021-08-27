@@ -14,7 +14,11 @@ export const LandmarkDetail: React.FC<Props> = ({route}) => {
     <View style={styles.container}>
       <Image source={{uri: landmark.image}} style={styles.image} />
       <View style={styles.heartButtonContainer}>
-        <HeartButton landmarkID={landmark.id} size={44} />
+        <HeartButton
+          landmarkID={landmark.id}
+          size={44}
+          testID="LandmarkDetail_heart-button"
+        />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{landmark.name}</Text>
