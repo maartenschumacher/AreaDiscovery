@@ -4,6 +4,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import {RootStackParamList} from '../../types/navigation';
 import {HeartButton} from '../common/HeartButton';
 import {BackButton, SIZE as BACK_BUTTON_SIZE} from './BackButton';
+import {SharedElement} from 'react-navigation-shared-element';
 
 type Props = StackScreenProps<RootStackParamList, 'LandmarkDetail'>;
 
@@ -12,7 +13,9 @@ export const LandmarkDetail: React.FC<Props> = ({route}) => {
 
   return (
     <View style={styles.container}>
-      <Image source={{uri: landmark.image}} style={styles.image} />
+      <SharedElement id={`item.${landmark.id}.photo`}>
+        <Image source={{uri: landmark.image}} style={styles.image} />
+      </SharedElement>
       <View style={styles.heartButtonContainer}>
         <HeartButton
           landmarkID={landmark.id}
