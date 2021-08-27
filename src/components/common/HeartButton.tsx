@@ -31,6 +31,8 @@ export const HeartButton: React.FC<Props> = ({landmarkID, size, testID}) => {
 
   const scaleAnim = useHeartAnimation(isFavourited);
 
+  const iconSize = size / 2;
+
   return (
     <View
       style={[
@@ -41,17 +43,17 @@ export const HeartButton: React.FC<Props> = ({landmarkID, size, testID}) => {
         testID={testID}
         onPress={onPress}
         hitSlop={{top: 10, left: 10, right: 10, bottom: 10}}>
-        <View style={{height: size / 2, width: size / 2}}>
+        <View style={{height: iconSize, width: iconSize}}>
           <AnimatedIcon
             name="heart"
-            size={size / 2}
+            size={iconSize}
             color="red"
             style={[styles.icon, {transform: [{scale: scaleAnim}]}]}
           />
           <Icon
             style={styles.icon}
             name="heart-o"
-            size={size / 2}
+            size={iconSize}
             color="red"
           />
         </View>
