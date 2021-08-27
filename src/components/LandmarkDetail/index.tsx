@@ -17,11 +17,13 @@ export const LandmarkDetail: React.FC<Props> = ({route}) => {
         <Image source={{uri: landmark.image}} style={styles.image} />
       </SharedElement>
       <View style={styles.heartButtonContainer}>
-        <HeartButton
-          landmarkID={landmark.id}
-          size={44}
-          testID="LandmarkDetail_heart-button"
-        />
+        <SharedElement id={`item.${landmark.id}.heart`}>
+          <HeartButton
+            landmarkID={landmark.id}
+            size={44}
+            testID="LandmarkDetail_heart-button"
+          />
+        </SharedElement>
       </View>
       <View style={styles.textContainer}>
         <SharedElement id={`item.${landmark.id}.title`}>

@@ -29,6 +29,7 @@ export const Root = () => {
               return [
                 `item.${landmark.id}.photo`,
                 {id: `item.${landmark.id}.title`, animation: 'fade'},
+                `item.${landmark.id}.heart`,
               ];
             }}
           />

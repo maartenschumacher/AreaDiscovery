@@ -27,11 +27,13 @@ export const LandmarkCard: React.FC<Props> = ({landmark}) => {
         <Text style={styles.title}>{landmark.name}</Text>
       </SharedElement>
       <View style={styles.heartContainer}>
-        <HeartButton
-          size={30}
-          landmarkID={landmark.id}
-          testID="AreaDiscovery_heart-button"
-        />
+        <SharedElement id={`item.${landmark.id}.heart`}>
+          <HeartButton
+            size={30}
+            landmarkID={landmark.id}
+            testID="AreaDiscovery_heart-button"
+          />
+        </SharedElement>
       </View>
     </TouchableOpacity>
   );
