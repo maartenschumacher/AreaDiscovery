@@ -22,7 +22,7 @@ export const MapMarker: React.FC<Props> = ({landmark, isSelected, onPress}) => {
     <Marker key={landmark.id} coordinate={landmark.latlng} onPress={onPress}>
       <Icon
         name="map-marker"
-        size={44}
+        size={55}
         color={isSelected ? 'blue' : 'grey'}
         testID="marker"
       />
