@@ -23,7 +23,9 @@ export const LandmarkCard: React.FC<Props> = ({landmark}) => {
       <SharedElement id={`item.${landmark.id}.photo`}>
         <Image source={{uri: landmark.image}} style={styles.image} />
       </SharedElement>
-      <Text style={styles.title}>{landmark.name}</Text>
+      <SharedElement id={`item.${landmark.id}.title`}>
+        <Text style={styles.title}>{landmark.name}</Text>
+      </SharedElement>
       <View style={styles.heartContainer}>
         <HeartButton
           size={30}

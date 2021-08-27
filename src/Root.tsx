@@ -26,7 +26,10 @@ export const Root = () => {
             component={LandmarkDetail}
             sharedElements={route => {
               const {landmark} = route.params;
-              return [`item.${landmark.id}.photo`];
+              return [
+                `item.${landmark.id}.photo`,
+                {id: `item.${landmark.id}.title`, animation: 'fade'},
+              ];
             }}
           />
         </Stack.Navigator>

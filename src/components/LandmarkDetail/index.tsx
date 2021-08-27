@@ -24,7 +24,9 @@ export const LandmarkDetail: React.FC<Props> = ({route}) => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>{landmark.name}</Text>
+        <SharedElement id={`item.${landmark.id}.title`}>
+          <Text style={styles.title}>{landmark.name}</Text>
+        </SharedElement>
         <Text style={styles.description}>{landmark.description}</Text>
       </View>
       <View style={styles.backButtonContainer}>
