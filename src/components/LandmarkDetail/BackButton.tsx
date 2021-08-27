@@ -32,5 +32,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 3,
     shadowOpacity: 0.3,
+    margin: 3, // otherwise the shadow looks glitchy during shared element transition
   },
 });

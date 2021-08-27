@@ -30,6 +30,7 @@ export const Root = () => {
                 `item.${landmark.id}.photo`,
                 {id: `item.${landmark.id}.title`, animation: 'fade'},
                 `item.${landmark.id}.heart`,
+                {id: `item.${landmark.id}.back`, animation: 'fade'},
               ];
             }}
           />
