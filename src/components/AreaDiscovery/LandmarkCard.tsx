@@ -37,8 +37,6 @@ export const LandmarkCard: React.FC<Props> = ({landmark}) => {
 
 const styles = StyleSheet.create({
   container: {
-    overflow: 'hidden',
-    borderRadius: 20,
     width: 260,
     height: 150,
     marginTop: 20,
@@ -46,15 +44,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   image: {
-    position: 'absolute',
+    borderRadius: 20,
     width: '100%',
     height: '100%',
   },
   title: {
+    position: 'absolute',
     fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
-    margin: 10,
+    bottom: 10,
+    left: 10,
   },
   heartContainer: {
     position: 'absolute',
