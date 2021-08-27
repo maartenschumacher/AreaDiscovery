@@ -18,7 +18,9 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-maps": "^0.28.0",
     "react-native-safe-area-context": "^3.3.0",
+    "react-native-shared-element": "^0.8.2",
     "react-native-vector-icons": "^8.1.0",
+    "react-navigation-shared-element": "^3.1.2",
     "react-redux": "^7.2.4"
   },
   "devDependencies": {
@@ -55,7 +57,7 @@
       "node"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native/*|react-native-vector-icons|react-native-maps|@react-navigation/*)/)"
+      "node_modules/(?!(react-native|@react-native/*|react-native-vector-icons|react-native-maps|@react-navigation/*|react-navigation-shared-element|react-native-shared-element)/)"
     ]
   }
 }
