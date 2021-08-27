@@ -13,7 +13,13 @@ export const Root = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+            cardStyleInterpolator: ({current: {progress}}) => ({
+              cardStyle: {opacity: progress},
+            }),
+          }}>
           <Stack.Screen name="AreaDiscovery" component={AreaDiscovery} />
           <Stack.Screen
             name="LandmarkDetail"
