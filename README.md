@@ -1,6 +1,13 @@
 # AreaDiscovery
 
-PerchPeek coding exercise
+React native coding exercise, including shared element transition. 
+
+Demo:
+
+
+https://user-images.githubusercontent.com/10407025/133228979-0e1c61ec-7313-4d1e-8c76-9bf27c6f23f8.mp4
+
+
 
 ## How to run
 
